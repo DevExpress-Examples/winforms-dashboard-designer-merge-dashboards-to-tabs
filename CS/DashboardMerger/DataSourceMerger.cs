@@ -4,10 +4,10 @@ using System.Linq;
 using System.Xml.Linq;
 using DevExpress.DashboardCommon;
 
-namespace DashboardMerger {
+namespace DashboardMergeExample {
     public static class DataSourceMerger {
         public static void MergeDataSources(DataSourceCollection fromDataSources, DashboardMerger dashboardMerger) {
-            DataSourceCollection toDataSources = dashboardMerger.OriginalDashboard.DataSources;
+            DataSourceCollection toDataSources = dashboardMerger.TargetDashboard.DataSources;
 
             foreach(IDashboardDataSource dataSource in fromDataSources) {
                 AddDataSourceCopy(dataSource, dashboardMerger, (dataSourceCopy) => {
@@ -17,7 +17,7 @@ namespace DashboardMerger {
         }
 
         static void AddDataSourceCopy(IDashboardDataSource dataSource, DashboardMerger dashboardMerger, Action<IDashboardDataSource> addDataSourceDelegate) {
-            DataSourceCollection toDataSources = dashboardMerger.OriginalDashboard.DataSources;
+            DataSourceCollection toDataSources = dashboardMerger.TargetDashboard.DataSources;
             IDictionary<string, string> dataSourceNamesMap = dashboardMerger.DataSourceNamesMap;
             IDashboardDataSource dataSourceCopy = CreateDataSourceCopy(dataSource);
             if(dataSourceCopy != null) {
@@ -46,7 +46,7 @@ namespace DashboardMerger {
                 XElement element = efDataSource.SaveToXml();
                 DashboardEFDataSource newDataSource = new DashboardEFDataSource();
                 newDataSource.LoadFromXml(element);
-                //newDataSource.Fill();
+                newDataSource.Fill();
                 return newDataSource;
             }
 
@@ -55,7 +55,7 @@ namespace DashboardMerger {
                 XElement element = excelDataSource.SaveToXml();
                 DashboardExcelDataSource newDataSource = new DashboardExcelDataSource();
                 newDataSource.LoadFromXml(element);
-                //newDataSource.Fill();
+                newDataSource.Fill();
                 return newDataSource;
             }
 
@@ -63,7 +63,7 @@ namespace DashboardMerger {
             if(extractDataSource != null) {
                 XElement element = extractDataSource.SaveToXml();
                 DashboardExtractDataSource newDataSource = new DashboardExtractDataSource();
-                //newDataSource.LoadFromXml(element);
+                newDataSource.LoadFromXml(element);
                 return newDataSource;
             }
 
@@ -72,7 +72,7 @@ namespace DashboardMerger {
                 XElement element = objectDataSource.SaveToXml();
                 DashboardObjectDataSource newDataSource = new DashboardObjectDataSource();
                 newDataSource.LoadFromXml(element);
-                //newDataSource.Fill();
+                newDataSource.Fill();
                 return newDataSource;
             }
 
@@ -81,7 +81,7 @@ namespace DashboardMerger {
                 XElement element = olapDataSource.SaveToXml();
                 DashboardOlapDataSource newDataSource = new DashboardOlapDataSource();
                 newDataSource.LoadFromXml(element);
-                //newDataSource.Fill();
+                newDataSource.Fill();
                 return newDataSource;
             }
 
@@ -90,7 +90,7 @@ namespace DashboardMerger {
                 XElement element = sqlDataSource.SaveToXml();
                 DashboardSqlDataSource newDataSource = new DashboardSqlDataSource();
                 newDataSource.LoadFromXml(element);
-                //newDataSource.Fill();
+                newDataSource.Fill();
                 return newDataSource;
             }
             return null;

@@ -1,4 +1,4 @@
-﻿namespace DashboardMerger {
+﻿namespace DashboardMergeExample {
     partial class DesignerForm {
         /// <summary>
         /// Required designer variable.
@@ -37,8 +37,6 @@
             this.dashboardDesigner.Name = "dashboardDesigner";
             this.dashboardDesigner.Size = new System.Drawing.Size(962, 584);
             this.dashboardDesigner.TabIndex = 0;
-            this.dashboardDesigner.CustomizeDashboardTitle += new DevExpress.DashboardWin.CustomizeDashboardTitleEventHandler(this.DashboardDesignerCustomizeDashboardTitle);
-            this.dashboardDesigner.DashboardClosing += new DevExpress.DashboardWin.DashboardClosingEventHandler(this.DashboardDesignerDashboardClosing);
             // 
             // DesignerForm
             // 

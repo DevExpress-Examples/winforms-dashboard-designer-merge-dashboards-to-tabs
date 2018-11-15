@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using DevExpress.DashboardCommon;
 
-namespace DashboardMerger {
+namespace DashboardMergeExample {
     public static class ItemsMerger {
         public static void MergeGroups(DashboardItemGroupCollection fromGroups, DashboardMerger dashboardMerger) {
-            DashboardItemGroupCollection toGroups = dashboardMerger.OriginalDashboard.Groups;
+            DashboardItemGroupCollection toGroups = dashboardMerger.TargetDashboard.Groups;
             IList<DashboardItem> newItems = dashboardMerger.NewItems;
             foreach(DashboardItemGroup group in fromGroups) {
                 AddGroupCopy(group, dashboardMerger, (groupCopy) => {
@@ -16,7 +16,7 @@ namespace DashboardMerger {
             }
         }
         public static void MergeItems(DashboardItemCollection fromItems, DashboardMerger dashboardMerger) {
-            DashboardItemCollection toItems = dashboardMerger.OriginalDashboard.Items;
+            DashboardItemCollection toItems = dashboardMerger.TargetDashboard.Items;
             IList<DashboardItem> newItems = dashboardMerger.NewItems;
 
             foreach(DashboardItem dashboardItem in fromItems) {
@@ -27,7 +27,7 @@ namespace DashboardMerger {
             }
         }
         static void AddGroupCopy(DashboardItemGroup originalGroup, DashboardMerger dashboardMerger, Action<DashboardItemGroup> addGroupDelegate) {
-            DashboardItemGroupCollection toGroups = dashboardMerger.OriginalDashboard.Groups;
+            DashboardItemGroupCollection toGroups = dashboardMerger.TargetDashboard.Groups;
             DashboardItemGroup groupCopy = CreateGroupCopy(originalGroup);
             if(toGroups.Any(g => g.ComponentName == originalGroup.ComponentName)) {
                 if(ResolveGroupNamesConflict(groupCopy, originalGroup.ComponentName, toGroups, dashboardMerger.GroupNamesMap))
@@ -38,7 +38,7 @@ namespace DashboardMerger {
         }
         static bool ResolveGroupNamesConflict(DashboardItemGroup groupCopy, string originalGroupName, IEnumerable<DashboardItem> toGroups, IDictionary<string, string> groupNamesMap) {
             
-            // Provide your group component name confilict resolution logic here
+            // Provide your group component name conflict resolution logic here.
 
             string newName = NamesGenerator.GenerateName(originalGroupName, 1, toGroups.Select(g => g.ComponentName));
             groupNamesMap.Add(originalGroupName, newName);
@@ -46,9 +46,9 @@ namespace DashboardMerger {
             return true;
         }
         static void AddItemCopy(DashboardItem originalItem, DashboardMerger dashboardMerger, Action<DashboardItem> addItemDelegate) {
-            DashboardItemCollection toItems = dashboardMerger.OriginalDashboard.Items;
+            DashboardItemCollection toItems = dashboardMerger.TargetDashboard.Items;
             IDictionary<string, string> dataSourceNamesMap = dashboardMerger.DataSourceNamesMap;
-            DataSourceCollection existingDataSources = dashboardMerger.OriginalDashboard.DataSources;
+            DataSourceCollection existingDataSources = dashboardMerger.TargetDashboard.DataSources;
             DashboardItem dashboardItemCopy = originalItem.CreateCopy();
 
             bool shouldAddItem = false;

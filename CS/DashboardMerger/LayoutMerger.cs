@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using DevExpress.DashboardCommon;
 
-namespace DashboardMerger {
+namespace DashboardMergeExample {
     public static class LayoutMerger {
         public static void MergeLayout(DashboardLayoutGroup layoutRoot, string newPageName, DashboardMerger dashboardMerger) {
             TabContainerDashboardItem tabContainer = dashboardMerger.TabContainer;
-            Dashboard originalDashboard = dashboardMerger.OriginalDashboard;
+            Dashboard targetDashboard = dashboardMerger.TargetDashboard;
             IDictionary<string, string> dashboardItemNamesMap = dashboardMerger.DashboardItemNamesMap;
             IDictionary<string, string> groupNamesMap = dashboardMerger.GroupNamesMap;
             IEnumerable<DashboardItem> newItems = dashboardMerger.NewItems;
@@ -44,13 +44,13 @@ namespace DashboardMerger {
                         if(!groupNamesMap.TryGetValue(container.ComponentName, out newGroupName)) {
                             newGroupName = container.ComponentName;
                         }
-                        item.ParentContainer = originalDashboard.Groups[newGroupName];
+                        item.ParentContainer = targetDashboard.Groups[newGroupName];
                     } else {
                         item.ParentContainer = newTabPage;
                     }
                 }
             }
-            DashboardLayoutTabContainer layoutTabContainer = originalDashboard.LayoutRoot.FindRecursive(tabContainer);
+            DashboardLayoutTabContainer layoutTabContainer = targetDashboard.LayoutRoot.FindRecursive(tabContainer);
             layoutTabContainer.ChildNodes.Add(layoutPage);
             newTabPage.Name = newPageName;
         }

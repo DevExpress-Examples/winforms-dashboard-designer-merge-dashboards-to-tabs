@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DashboardMerger {
+namespace DashboardMergeExample {
     public static class NamesGenerator {
         public static string GenerateName(string name, int index, IEnumerable<string> occupiedNames) {
             string result = String.Format("{0}_{1}", name, index);
