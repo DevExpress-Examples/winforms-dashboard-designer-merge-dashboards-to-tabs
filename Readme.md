@@ -3,11 +3,11 @@
 This example creates a single merged dashboard from multiple individual dashboards, inserting them as tab pages in a tab container.
 
 To insert a dashboard as a tab page contained in another dashboard, the application should perform the following actions in code:
-* Load the specified dashboard and check whether it has a tab container. 
-* Copy dashboard data sources and resolve name conflicts. Create a dictionary containing old and new names.
-* Copy dashboard groups and resolve name conflicts. Create a dictionary containing old and new names.
-* Copy dashboard items except groups and resolve name conflicts. Create a dictionary containing old and new names. Update data bindings using the data source names dictionary created in Step 1.
-* Update the layout. Move the layout root to the tab page as a child node. Item and group names specified as source items for the layout items should be updated if they are changed while resolving name conflicts.
+1. Load the specified dashboard and check whether it has a tab container. 
+2. Copy dashboard data sources and resolve name conflicts. Create a dictionary containing old and new names.
+3. Copy dashboard groups and resolve name conflicts. Create a dictionary containing old and new names.
+4. Copy dashboard items except groups and resolve name conflicts. Create a dictionary containing old and new names. Update data bindings using the data source names dictionary created in Step 1.
+5. Update the layout. Move the layout root to the tab page as a child node. Item and group names specified as source items for the layout items should be updated if they are changed while resolving name conflicts.
 
 
 ![](https://github.com/DevExpress-Examples/winforms-dashboard-designer-merge-dashboards-to-tabs/blob/18.2.3%2B/images/Screenshot.png)
