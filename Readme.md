@@ -14,5 +14,5 @@ To insert a dashboard as a tab page contained in another dashboard, the applicat
 
 In a merged dashboard, you can clean up the data source collection by discovering identical data sources with different names and using the [Data Source Browser](http://newdoc.devexpress.devx/Dashboard/15611/building-the-designer-and-viewer-applications/winforms-designer/ui-elements/data-source-browser) command button to switch the data source for the selected dashboard item:
 
-![](~/images/DataSourceBrowser.png)
+![](https://github.com/DevExpress-Examples/winforms-dashboard-designer-merge-dashboards-to-tabs/blob/18.2.3%2B/images/DataSourceBrowser.png)
 
