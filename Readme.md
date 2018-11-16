@@ -6,7 +6,7 @@ To insert a dashboard as a tab page contained in another dashboard, the applicat
 1. Load the specified dashboard and check whether it has a tab container. 
 2. Copy dashboard data sources and resolve name conflicts. Create a dictionary containing old and new names.
 3. Copy dashboard groups and resolve name conflicts. Create a dictionary containing old and new names.
-4. Copy dashboard items except groups and resolve name conflicts. Create a dictionary containing old and new names. Update data bindings using the data source names dictionary created in Step 1.
+4. Copy dashboard items except groups and resolve name conflicts. Create a dictionary containing old and new names. Update data bindings using the data source names dictionary created while resolving the data source name conflicts.
 5. Update the layout. Move the layout root to the tab page as a child node. Item and group names specified as source items for the layout items should be updated if they are changed while resolving name conflicts.
 
 
