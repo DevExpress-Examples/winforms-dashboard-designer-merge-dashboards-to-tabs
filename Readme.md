@@ -4,7 +4,7 @@ This example creates a single merged dashboard from multiple individual dashboar
 
 Run the application. Click the **Merge Dashboard** button in the dashboard title. In the **Open** file dialog select the "sample-dashboard.xml" and "another-sample-dashboard.xml" files (you can select any other dashboard xml definition files) and click **Open**.
 
-![screenshot](/images/screenshot.png)
+![screenshot](/images/Screenshot.png)
 
 To insert a dashboard as a tab page contained in another dashboard, the application performs the following tasks:
 
