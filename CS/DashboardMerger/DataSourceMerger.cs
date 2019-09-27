@@ -32,7 +32,7 @@ namespace DashboardMergeExample {
 
         static bool ResolveNamesConflict(IDashboardDataSource dataSourceCopy, DataSourceCollection toDataSources, IDictionary<string, string> dataSourceNamesMap) {
             
-            // Provide your data source component names confilict resolution logic here
+            // Provide your data source component names conflict resolution logic here
 
             string newName = NamesGenerator.GenerateName(dataSourceCopy.ComponentName, 1, toDataSources.Select(ds => ds.ComponentName));
             dataSourceNamesMap.Add(dataSourceCopy.ComponentName, newName);

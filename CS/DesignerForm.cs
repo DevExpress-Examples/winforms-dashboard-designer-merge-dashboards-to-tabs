@@ -21,10 +21,11 @@ namespace DashboardMergeExample
 
         // The method that performs the merge.
         void MergeDashboard(DashboardToolbarItemClickEventArgs args) {
-            // Invoke a file dialog to select mutiple dashboards to merge.
+            // Invoke a file dialog to select multiple dashboards to merge.
             // If one or several selected dashboards have tabbed layout and cannot be merged, a message is shown. 
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Dashboard files (*.xml)|*.xml";
+            openFileDialog.InitialDirectory = Application.StartupPath + "\\Dashboards";
             openFileDialog.Multiselect = true;
             if(openFileDialog.ShowDialog() == DialogResult.OK) {
                 dashboardDesigner.Dashboard.BeginUpdate();
