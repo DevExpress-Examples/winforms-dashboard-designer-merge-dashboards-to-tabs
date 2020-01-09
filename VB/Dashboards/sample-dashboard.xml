@@ -2,7 +2,7 @@
 <Dashboard CurrencyCulture="en-US">
   <Title Text="Sample Dashboard" />
   <DataSources>
-    <ExcelDataSource Name="Excel Data Source 1" FileName="SalesPerson.xlsx" ComponentName="dashboardExcelDataSource1">
+    <ExcelDataSource Name="Excel Data Source 1" FileName="C:\Data\SalesPerson.xlsx" ComponentName="dashboardExcelDataSource1">
       <Options Type="DevExpress.DataAccess.Excel.ExcelSourceOptions" SkipEmptyRows="true" UseFirstRowAsHeader="true" SkipHiddenColumns="true" SkipHiddenRows="true">
         <ImportSettings Type="DevExpress.DataAccess.Excel.ExcelWorksheetSettings" WorksheetName="Data" />
       </Options>
