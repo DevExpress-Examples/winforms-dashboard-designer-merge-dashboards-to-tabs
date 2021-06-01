@@ -19,3 +19,7 @@ In a merged dashboard, you can clean up the data source collection by discoverin
 
 ![DataSourceBrowser](/images/DataSourceBrowser.png)
 
+## Documentation
+
+- [Tab Container](https://docs.devexpress.com/Dashboard/400237/winforms-dashboard/winforms-designer/create-dashboards-in-the-winforms-designer/dashboard-item-settings/tab-container)
+- [Data Source Browser](https://docs.devexpress.com/Dashboard/15611/winforms-dashboard/winforms-designer/ui-elements/data-source-browser)
