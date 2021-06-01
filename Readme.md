@@ -15,7 +15,7 @@ To insert a dashboard as a tab page contained in another dashboard, the applicat
 5. Update the layout. Move the layout root to the tab page as a child node. Item and group names specified as source items for the layout items should be updated if they are changed while resolving name conflicts.
 
 
-In a merged dashboard, you can clean up the data source collection by discovering identical data sources with different names and using the [Data Source Browser](http://newdoc.devexpress.devx/Dashboard/15611/building-the-designer-and-viewer-applications/winforms-designer/ui-elements/data-source-browser) command button to switch the data source for the selected dashboard item:
+In a merged dashboard, you can clean up the data source collection by discovering identical data sources with different names and using the [Data Source Browser](https://docs.devexpress.com/Dashboard/15611/building-the-designer-and-viewer-applications/winforms-designer/ui-elements/data-source-browser) command button to switch the data source for the selected dashboard item:
 
 ![DataSourceBrowser](/images/DataSourceBrowser.png)
 
