@@ -1,4 +1,4 @@
-# How to Combine Multiple Dashboards into a Dashboard with Multiple Tab Pages
+# Dashboard for WinForms - How to Combine Multiple Dashboards into a Dashboard with Multiple Tab Pages
 
 This example creates a single merged dashboard from multiple individual dashboards, inserting them as tab pages in a tab container.
 
