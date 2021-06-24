@@ -1,3 +1,10 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [DesignerForm.cs](./CS/DesignerForm.cs)
+* [DashboardMerger](./CS/DashboardMerger)
+<!-- default file list end -->
+
 # Dashboard for WinForms - How to Combine Multiple Dashboards into a Dashboard with Multiple Tab Pages
 
 This example creates a single merged dashboard from multiple individual dashboards, inserting them as tab pages in a tab container.
