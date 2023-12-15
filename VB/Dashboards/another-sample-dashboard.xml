@@ -2,37 +2,6 @@
 <Dashboard CurrencyCulture="en-US">
   <Title Text="Another Sample Dashboard" />
   <DataSources>
-    <ExcelDataSource Name="Excel Data Source 1" FileName="SalesPerson.xlsx" ComponentName="dashboardExcelDataSource1">
-      <Options Type="DevExpress.DataAccess.Excel.ExcelSourceOptions" SkipEmptyRows="true" UseFirstRowAsHeader="true" SkipHiddenColumns="true" SkipHiddenRows="true">
-        <ImportSettings Type="DevExpress.DataAccess.Excel.ExcelWorksheetSettings" WorksheetName="Data" />
-      </Options>
-      <Schema>
-        <FieldInfo Name="CategoryName" Type="System.String" Selected="true" />
-        <FieldInfo Name="Country" Type="System.String" Selected="true" />
-        <FieldInfo Name="ProductName" Type="System.String" Selected="true" />
-        <FieldInfo Name="Sales Person" Type="System.String" Selected="true" />
-        <FieldInfo Name="OrderDate" Type="System.DateTime" Selected="true" />
-        <FieldInfo Name="OrderID" Type="System.Double" Selected="true" />
-        <FieldInfo Name="Quantity" Type="System.Double" Selected="true" />
-        <FieldInfo Name="Discount" Type="System.Double" Selected="true" />
-        <FieldInfo Name="Extended Price" Type="System.Double" Selected="true" />
-        <FieldInfo Name="UnitPrice" Type="System.Double" Selected="true" />
-      </Schema>
-      <ResultSchema>
-        <View>
-          <Field Name="CategoryName" Type="String" />
-          <Field Name="Country" Type="String" />
-          <Field Name="ProductName" Type="String" />
-          <Field Name="Sales Person" Type="String" />
-          <Field Name="OrderDate" Type="DateTime" />
-          <Field Name="OrderID" Type="Double" />
-          <Field Name="Quantity" Type="Double" />
-          <Field Name="Discount" Type="Double" />
-          <Field Name="Extended Price" Type="Double" />
-          <Field Name="UnitPrice" Type="Double" />
-        </View>
-      </ResultSchema>
-    </ExcelDataSource>
     <ExcelDataSource Name="Excel Data Source 1" FileName="SalesPerson.xlsx" ComponentName="dashboardExcelDataSource1_1">
       <Options Type="DevExpress.DataAccess.Excel.ExcelSourceOptions" SkipEmptyRows="true" UseFirstRowAsHeader="true" SkipHiddenColumns="true" SkipHiddenRows="true">
         <ImportSettings Type="DevExpress.DataAccess.Excel.ExcelWorksheetSettings" WorksheetName="Data" />

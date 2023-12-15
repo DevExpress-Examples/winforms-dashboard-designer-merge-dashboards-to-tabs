@@ -2,48 +2,69 @@
 <Dashboard CurrencyCulture="en-US">
   <Title Text="Sample Dashboard" />
   <DataSources>
-    <ExcelDataSource Name="Excel Data Source 1" FileName="SalesPerson.xlsx" ComponentName="dashboardExcelDataSource1">
-      <Options Type="DevExpress.DataAccess.Excel.ExcelSourceOptions" SkipEmptyRows="true" UseFirstRowAsHeader="true" SkipHiddenColumns="true" SkipHiddenRows="true">
-        <ImportSettings Type="DevExpress.DataAccess.Excel.ExcelWorksheetSettings" WorksheetName="Data" />
-      </Options>
-      <Schema>
-        <FieldInfo Name="CategoryName" Type="System.String" Selected="true" />
-        <FieldInfo Name="Country" Type="System.String" Selected="true" />
-        <FieldInfo Name="ProductName" Type="System.String" Selected="true" />
-        <FieldInfo Name="Sales Person" Type="System.String" Selected="true" />
-        <FieldInfo Name="OrderDate" Type="System.DateTime" Selected="true" />
-        <FieldInfo Name="OrderID" Type="System.Double" Selected="true" />
-        <FieldInfo Name="Quantity" Type="System.Double" Selected="true" />
-        <FieldInfo Name="Discount" Type="System.Double" Selected="true" />
-        <FieldInfo Name="Extended Price" Type="System.Double" Selected="true" />
-        <FieldInfo Name="UnitPrice" Type="System.Double" Selected="true" />
-      </Schema>
-      <ResultSchema>
-        <View>
-          <Field Name="CategoryName" Type="String" />
-          <Field Name="Country" Type="String" />
-          <Field Name="ProductName" Type="String" />
-          <Field Name="Sales Person" Type="String" />
-          <Field Name="OrderDate" Type="DateTime" />
-          <Field Name="OrderID" Type="Double" />
-          <Field Name="Quantity" Type="Double" />
-          <Field Name="Discount" Type="Double" />
-          <Field Name="Extended Price" Type="Double" />
-          <Field Name="UnitPrice" Type="Double" />
-        </View>
-      </ResultSchema>
-    </ExcelDataSource>
+    <ExtractFileDataSource ComponentName="dashboardExtractDataSource1" Name="Extract Data Source 1">
+      <FileName>C:\work\update examples\winforms-dashboard-designer-merge-dashboards-to-tabs\CS\SalesPersonExtract.dat</FileName>
+      <Parameters />
+      <SavedSchema>
+        <Column>
+          <Name>OrderID</Name>
+          <Type>System.Int32</Type>
+        </Column>
+        <Column>
+          <Name>Country</Name>
+          <Type>System.String</Type>
+        </Column>
+        <Column>
+          <Name>FirstName</Name>
+          <Type>System.String</Type>
+        </Column>
+        <Column>
+          <Name>LastName</Name>
+          <Type>System.String</Type>
+        </Column>
+        <Column>
+          <Name>ProductName</Name>
+          <Type>System.String</Type>
+        </Column>
+        <Column>
+          <Name>CategoryName</Name>
+          <Type>System.String</Type>
+        </Column>
+        <Column>
+          <Name>OrderDate</Name>
+          <Type>System.DateTime</Type>
+        </Column>
+        <Column>
+          <Name>UnitPrice</Name>
+          <Type>System.Decimal</Type>
+        </Column>
+        <Column>
+          <Name>Quantity</Name>
+          <Type>System.Int16</Type>
+        </Column>
+        <Column>
+          <Name>Discount</Name>
+          <Type>System.Single</Type>
+        </Column>
+        <Column>
+          <Name>Extended Price</Name>
+          <Type>System.Decimal</Type>
+        </Column>
+        <Column>
+          <Name>Sales Person</Name>
+          <Type>System.String</Type>
+        </Column>
+      </SavedSchema>
+    </ExtractFileDataSource>
   </DataSources>
   <Items>
-    <Grid ComponentName="gridDashboardItem1" Name="Grid 1" ParentContainer="dashboardItemGroup1" DataSource="dashboardExcelDataSource1">
+    <Grid ComponentName="gridDashboardItem1" Name="Grid 1" ParentContainer="dashboardItemGroup1" DataSource="dashboardExtractDataSource1">
       <DataItems>
         <Dimension DataMember="CategoryName" DefaultId="DataItem0" />
         <Dimension DataMember="ProductName" DefaultId="DataItem1" />
         <Dimension DataMember="Sales Person" DefaultId="DataItem2" />
-        <Dimension DataMember="OrderDate" DateTimeGroupInterval="None" DefaultId="DataItem3" />
-        <Measure DataMember="Extended Price" DefaultId="DataItem4">
-          <NumericFormat FormatType="Currency" />
-        </Measure>
+        <Dimension DataMember="OrderDate" DefaultId="DataItem3" />
+        <Measure DataMember="Extended Price" DefaultId="DataItem4" />
       </DataItems>
       <GridColumns>
         <GridDimensionColumn>
@@ -63,29 +84,30 @@
         </GridMeasureColumn>
       </GridColumns>
       <GridOptions />
+      <ColumnFilterOptions />
     </Grid>
-    <Chart ComponentName="chartDashboardItem1" Name="Chart 1" ParentContainer="dashboardItemGroup1" DataSource="dashboardExcelDataSource1">
+    <Chart ComponentName="chartDashboardItem1" Name="Chart 1" ParentContainer="dashboardItemGroup1" DataSource="dashboardExtractDataSource1">
       <DataItems>
-        <Dimension DataMember="OrderDate" DefaultId="DataItem0" />
-        <Measure DataMember="OrderID" SummaryType="CountDistinct" DefaultId="DataItem1" />
+        <Dimension DataMember="OrderDate" DefaultId="DataItem1" />
+        <Measure DataMember="OrderID" DefaultId="DataItem0" />
       </DataItems>
       <Arguments>
-        <Argument DefaultId="DataItem0" />
+        <Argument DefaultId="DataItem1" />
       </Arguments>
       <Panes>
         <Pane Name="Pane 1">
           <Series>
             <Simple>
-              <Value DefaultId="DataItem1" />
+              <Value DefaultId="DataItem0" />
             </Simple>
           </Series>
         </Pane>
       </Panes>
     </Chart>
-    <Pie ComponentName="pieDashboardItem1" Name="Pies 1" DataSource="dashboardExcelDataSource1">
+    <Pie ComponentName="pieDashboardItem1" Name="Pies 1" DataSource="dashboardExtractDataSource1">
       <DataItems>
-        <Dimension DataMember="Sales Person" DefaultId="DataItem0" />
         <Measure DataMember="Extended Price" DefaultId="DataItem1" />
+        <Dimension DataMember="Sales Person" DefaultId="DataItem0" />
       </DataItems>
       <Arguments>
         <Argument DefaultId="DataItem0" />

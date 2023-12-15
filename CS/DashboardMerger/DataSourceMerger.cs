@@ -50,15 +50,6 @@ namespace DashboardMergeExample {
                 return newDataSource;
             }
 
-            DashboardExcelDataSource excelDataSource = dataSourceToCopy as DashboardExcelDataSource;
-            if(excelDataSource != null) {
-                XElement element = excelDataSource.SaveToXml();
-                DashboardExcelDataSource newDataSource = new DashboardExcelDataSource();
-                newDataSource.LoadFromXml(element);
-                newDataSource.Fill();
-                return newDataSource;
-            }
-
             DashboardExtractDataSource extractDataSource = dataSourceToCopy as DashboardExtractDataSource;
             if(extractDataSource != null) {
                 XElement element = extractDataSource.SaveToXml();

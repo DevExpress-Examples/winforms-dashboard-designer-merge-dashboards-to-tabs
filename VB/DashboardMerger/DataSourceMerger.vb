@@ -55,15 +55,6 @@ Namespace DashboardMergeExample
 				Return newDataSource
 			End If
 
-			Dim excelDataSource As DashboardExcelDataSource = TryCast(dataSourceToCopy, DashboardExcelDataSource)
-			If excelDataSource IsNot Nothing Then
-				Dim element As XElement = excelDataSource.SaveToXml()
-				Dim newDataSource As New DashboardExcelDataSource()
-				newDataSource.LoadFromXml(element)
-				newDataSource.Fill()
-				Return newDataSource
-			End If
-
 			Dim extractDataSource As DashboardExtractDataSource = TryCast(dataSourceToCopy, DashboardExtractDataSource)
 			If extractDataSource IsNot Nothing Then
 				Dim element As XElement = extractDataSource.SaveToXml()
