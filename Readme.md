@@ -4,7 +4,7 @@
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
 
-# Dashboard for WinForms - How to Combine Multiple Dashboards into a Dashboard with Multiple Tab Pages
+# BI Dashboard for WinForms - How to Combine Multiple Dashboards into a Dashboard with Multiple Tab Pages
 
 This example creates a single merged dashboard from multiple individual dashboards, inserting them as tab pages in a tab container.
 
@@ -25,7 +25,7 @@ In a merged dashboard, you can clean up the data source collection by discoverin
 ![DataSourceBrowser](/images/DataSourceBrowser.png)
 
 <!-- default file list -->
-## Files to look at
+## Files to Review
 
 * [DesignerForm.cs](./CS/DesignerForm.cs)
 * [DashboardMerger](./CS/DashboardMerger)
